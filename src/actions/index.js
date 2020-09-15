@@ -5,4 +5,4 @@ const filterSuperhero = superhero => ({
   superhero,
 });
 
-export default filterSuperhero;
+export { FILTER_SUPERHERO, filterSuperhero };
