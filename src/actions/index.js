@@ -1,8 +1,8 @@
-const FILTER_SUPERHERO = 'FILTE_SUPERHERO';
+const FILTER_SUPERHERO = 'FILTER_SUPERHERO';
 
-const filterSuperhero = superhero => ({
+const filterSuperhero = name => ({
   type: FILTER_SUPERHERO,
-  superhero,
+  name,
 });
 
 export { FILTER_SUPERHERO, filterSuperhero };

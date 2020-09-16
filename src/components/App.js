@@ -1,15 +1,15 @@
 import React from 'react';
 import SearchForm from '../containers/searchForm';
+import SuperheroList from '../containers/superheroList';
 
 function App() {
   return (
     <div className="App">
-      Hello React!
       <div className="form-container">
         <SearchForm />
+        <SuperheroList />
       </div>
     </div>
-
   );
 }
 
