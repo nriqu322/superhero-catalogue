@@ -1,5 +1,6 @@
 // import axios from 'axios';
 
+const cors = 'https://cors-anywhere.herokuapp.com/';
 const api = {
   baseUrl: 'https://superheroapi.com/api/',
   token: '10158849047488054',
@@ -13,11 +14,11 @@ const api = {
 //     .then(response => response.data);
 // };
 
-async function getSuperhero(name = '') {
+async function getSuperhero(name) {
   try {
-    const response = await fetch(`${api.baseUrl}${api.token}/search/${name}`, { mode: 'no-cors' });
+    const response = await fetch(`${cors}${api.baseUrl}${api.token}/search/${name}`);
     const data = await response.json();
-    return data;
+    return data.results;
   } catch (e) {
     return {
       error: e.message,
