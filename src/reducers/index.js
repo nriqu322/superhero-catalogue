@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import superheroReducer from './superhero';
+import superheroReducer from './superheroes';
 
 export default combineReducers({
   superhero: superheroReducer,

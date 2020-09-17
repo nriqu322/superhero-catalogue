@@ -1,73 +1,86 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import getSuperhero from '../services/superheroApi';
-// import Superhero from '../components/superhero';
-import { filterSuperhero } from '../actions';
+import { filterSuperhero } from '../actions/index';
+import SuperheroCard from '../components/superhero';
 
-// const SuperheroList = props => {
-//   // const [superheroList, setSuperheroList] = useState([]);
+const SuperheroList = () => {
+  // const [superheroList, setSuperheroList] = useState([]);
 
-//   const { filterSuperhero, superheroResult } = props;
+  // const { filterSuperhero } = props;
+  const [superheroes, setSuperheroes] = useState([]);
 
-//   useEffect(() => {
-//     if (superheroResult.length === 0) {
-//       const superheroes = [];
-//       getSuperhero('spider').then(response => superheroes.push(response));
-//       filterSuperhero(superheroes);
-//       console.log(superheroes);
-//       console.log(superheroResult);
+  useEffect(() => {
+    if (superheroes.length === 0) {
+      getSuperhero('hulk').then(response => setSuperheroes(response));
+    }
+  });
+
+  return (
+    <>
+      <div className="superhero-list">
+        {
+          superheroes.map(superhero => (
+            <SuperheroCard
+              key={superhero.id}
+              id={superhero.id}
+              name={superhero.name}
+              image={superhero.image.url}
+            />
+          ))
+        }
+      </div>
+    </>
+  );
+};
+
+// class SuperheroList extends React.Component {
+//   componentDidMount() {
+//     const { filterSuperhero, superheroes } = this.props;
+
+//     if (superheroes.length === 0) {
+//       const heroes = [];
+//       getSuperhero('spider').then(response => {
+//         if (response) {
+//           heroes.push(response);
+//         }
+//       });
+//       filterSuperhero(heroes);
 //     }
-//   }); // remove the empty array to update every time it changes
+//     console.log(superheroes);
+//   }
 
-//   return (
-//     <>
+//   render() {
+//     const { superheroes } = this.props;
+//     return (
 //       <div className="superhero-list">
-//         {/* {
-//         superheroResult.map(superhero => (
-//           <Superhero key={superhero.id} superhero={superhero} />
+//         {
+//         superheroes.map(superhero => (
+//           <SuperheroCard
+//             key={superhero.id}
+//             id={superhero.id}
+//             name={superhero.name}
+//             image={superhero.image.url}
+//           />
 //         ))
-//         } */}
-//         {superheroResult}
+//         }
 //       </div>
-//     </>
-//   );
+//     );
+//   }
+// }
+
+// SuperheroList.propTypes = {
+//   filterSuperhero: PropTypes.func.isRequired,
+//   superheroes: PropTypes.arrayOf(PropTypes.object),
 // };
 
-class SuperheroList extends React.Component {
-  componentDidMount() {
-    const { filterSuperhero, superheroResult } = this.props;
-
-    if (superheroResult.length === 0) {
-      const superheroes = [];
-      getSuperhero('spider').then(response => superheroes.push(response));
-      filterSuperhero(superheroes);
-      console.log(superheroes);
-      console.log(superheroResult);
-    }
-  }
-
-  render() {
-    const { superheroResult } = this.props;
-    return (
-      <div className="superhero-list">
-        {superheroResult}
-      </div>
-    );
-  }
-}
-
-SuperheroList.propTypes = {
-  filterSuperhero: PropTypes.func.isRequired,
-  superheroResult: PropTypes.instanceOf(Object),
-};
-
-SuperheroList.defaultProps = {
-  superheroResult: [],
-};
+// SuperheroList.defaultProps = {
+//   superheroes: [],
+// };
 
 const mapStateToProps = state => ({
-  superheroResult: state.superhero.superheroResult,
+  superheroes: state.superheroes,
 });
 
 const mapDispatchToProps = dispatch => ({

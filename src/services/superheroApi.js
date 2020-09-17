@@ -10,13 +10,13 @@ const api = {
 
 // const getSuperhero = async (name = '') => {
 //   axios
-//     .get(`${url}/search/batman`)
+//     .get(`${cors}${url}/search/${name}`)
 //     .then(response => response.data);
 // };
 
 async function getSuperhero(name) {
   try {
-    const response = await fetch(`${cors}${api.baseUrl}${api.token}/search/${name}`);
+    const response = await fetch(`${api.baseUrl}${api.token}/search/${name}`);
     const data = await response.json();
     return data.results;
   } catch (e) {
@@ -25,5 +25,16 @@ async function getSuperhero(name) {
     };
   }
 }
+
+// const getSuperhero = name => new Promise((resolve, reject) => {
+//   axios
+//     .get(
+//       `${cors}${api.baseUrl}${api.token}/search/${name}`,
+//     )
+//     .then(data => {
+//       resolve(data.data.results);
+//       reject(new Error('something bad happened'));
+//     });
+// });
 
 export default getSuperhero;

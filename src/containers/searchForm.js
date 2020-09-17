@@ -6,9 +6,7 @@ import getSuperhero from '../services/superheroApi';
 const SuperheroForm = () => {
   const [name, setName] = useState('');
 
-  const handleSubmit = event => {
-    event.preventDefault();
-
+  const handleSubmit = () => {
     if (name !== '') {
       getSuperhero(name).then(response => {
         if (response) {
@@ -19,12 +17,13 @@ const SuperheroForm = () => {
   };
 
   const handleChange = event => {
+    event.preventDefault();
     setName({ [event.target.name]: event.target.value });
   };
 
   return (
     <form id="superhero-form" onSubmit={handleSubmit}>
-      <input value={name} name="name" type="text" placeholder="Type a superhero name" onChange={handleChange} />
+      <input name="name" type="text" placeholder="Type a superhero name" onChange={handleChange} />
       <button type="submit">SEARCH</button>
     </form>
   );
