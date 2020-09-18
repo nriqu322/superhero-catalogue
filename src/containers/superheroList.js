@@ -45,7 +45,6 @@ class SuperheroList extends React.Component {
       getSuperhero('hulk').then(response => {
         if (response) {
           filterSuperhero(response);
-          console.log(response);
         }
       });
     }
@@ -73,11 +72,7 @@ class SuperheroList extends React.Component {
 
 SuperheroList.propTypes = {
   filterSuperhero: PropTypes.func.isRequired,
-  superheroes: PropTypes.arrayOf(PropTypes.object),
-};
-
-SuperheroList.defaultProps = {
-  superheroes: [],
+  superheroes: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = state => ({

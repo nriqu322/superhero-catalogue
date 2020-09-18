@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const SuperheroCard = props => {
   const {
@@ -8,14 +8,14 @@ const SuperheroCard = props => {
   } = props;
 
   return (
-    // <Link to="/details/:id">
-    <div className="hero-element">
-      <div className="card-container" id={id}>
-        <img src={image} alt={name} />
-        <h1>{name}</h1>
+    <Link to="/details/:id">
+      <div className="hero-element">
+        <div className="card-container" id={id}>
+          <img src={image} alt={name} />
+          <h1>{name}</h1>
+        </div>
       </div>
-    </div>
-    // </Link>
+    </Link>
   );
 };
 

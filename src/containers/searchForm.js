@@ -61,7 +61,6 @@ class SuperheroForm extends React.Component {
     getSuperhero(name).then(response => {
       if (response) {
         filterSuperhero(response);
-        console.log(response);
       }
     });
     this.setState({ name: '' });
