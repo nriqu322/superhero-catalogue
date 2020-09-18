@@ -1,6 +1,6 @@
 // import axios from 'axios';
 
-const cors = 'https://cors-anywhere.herokuapp.com/';
+// const cors = 'https://cors-anywhere.herokuapp.com/';
 const api = {
   baseUrl: 'https://superheroapi.com/api/',
   token: '10158849047488054',

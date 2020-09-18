@@ -1,3 +1,23 @@
 * {
   box-sizing: border-box;
 }
+
+.App {
+  max-width: 100%;
+}
+
+.superhero-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card-container {
+  text-align: center;
+  margin: 25px 20px;
+}
+
+.card-container img {
+  width: 280px;
+  max-height: 340px;
+}

@@ -5,7 +5,7 @@ import SuperheroList from '../containers/superheroList';
 function App() {
   return (
     <div className="App">
-      <div className="form-container">
+      <div className="body-container">
         <SearchForm />
         <SuperheroList />
       </div>

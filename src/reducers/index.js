@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import superheroReducer from './superheroes';
 
-export default combineReducers({
+const rootReducer = combineReducers({
   superhero: superheroReducer,
 });
+
+export default rootReducer;
