@@ -7,7 +7,8 @@ import { FILTER_SUPERHEROES } from '../actions/index';
 const superheroReducer = (state = [], action) => {
   switch (action.type) {
     case FILTER_SUPERHEROES:
-      return [...state, action.superheroes];
+      console.log(action);
+      return action.superheroes;
     default:
       return state;
   }

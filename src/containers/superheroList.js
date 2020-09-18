@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import getSuperhero from '../services/superheroApi';
@@ -53,7 +53,7 @@ class SuperheroList extends React.Component {
 
   render() {
     const { superheroes } = this.props;
-
+    console.log(superheroes);
     return (
       <div className="superhero-list">
         {

@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import superheroReducer from './superheroes';
 
 const rootReducer = combineReducers({
-  superhero: superheroReducer,
+  superheroes: superheroReducer,
 });
 
 export default rootReducer;
