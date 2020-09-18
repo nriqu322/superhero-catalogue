@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { filterSuperhero } from '../actions';
@@ -31,7 +31,7 @@ import getSuperhero from '../services/superheroApi';
 
 //   return (
 //     <form id="superhero-form" onSubmit={handleSubmit}>
-//       <input name="name" type="text" placeholder="Type a superhero name" onChange={handleChange} />
+//       <input name="name" type="text" placeholder="Superhero name" onChange={handleChange} />
 //       <button type="submit">SEARCH</button>
 //     </form>
 //   );
@@ -72,9 +72,9 @@ class SuperheroForm extends React.Component {
     const { name } = this.state;
 
     return (
-      <form id="superhero-form">
-        <input name="name" value={name} type="text" placeholder="Type a superhero name" onChange={this.handleChange} />
-        <button type="submit" onClick={this.handleSubmit}>SEARCH</button>
+      <form id="superhero-form" onSubmit={this.handleSubmit}>
+        <input name="name" value={name} type="text" placeholder="Superhero name" onChange={this.handleChange} />
+        <button type="submit">SEARCH</button>
       </form>
     );
   }

@@ -1,17 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import getSuperhero from '../services/superheroApi';
 import { filterSuperhero } from '../actions';
 import SuperheroCard from '../components/superhero';
 
-// const SuperheroList = () => {
-//   // const { filterSuperhero } = props;
+// const SuperheroList = props => {
+//   const { filterSuperhero } = props;
 //   const [superheroes, setSuperheroes] = useState([]);
 
 //   useEffect(() => {
 //     if (superheroes.length === 0) {
-//       getSuperhero('spider').then(response => setSuperheroes(response));
+//       getSuperhero('spider').then(response => {
+//         filterSuperhero(response);
+//         setSuperheroes(response);
+//         console.log(response);
+//       });
 //     }
 //   });
 
@@ -38,15 +42,12 @@ class SuperheroList extends React.Component {
     const { filterSuperhero, superheroes } = this.props;
 
     if (superheroes.length === 0) {
-    // const heroes = [];
       getSuperhero('hulk').then(response => {
         if (response) {
-          // heroes.push(response);
           filterSuperhero(response);
           console.log(response);
         }
       });
-    // filterSuperhero(heroes);
     }
   }
 
