@@ -12,5 +12,5 @@ const setCurrentHero = superhero => ({
 });
 
 export {
-  FILTER_SUPERHEROES, CURRENT_HERO, filterSuperhero, setCurrentHero
+  FILTER_SUPERHEROES, CURRENT_HERO, filterSuperhero, setCurrentHero,
 };
