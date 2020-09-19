@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setCurrentHero } from '../actions/index';
+import stamp from '../resources/stamp.png';
 
 const SuperheroCard = props => {
   const {
@@ -19,9 +20,10 @@ const SuperheroCard = props => {
     <Link className="card-link" to={`/details/${id}`} onClick={handleClick}>
       <div className="hero-element">
         <div className="card-container" id={id}>
-          <img src={image} alt={name} />
+          <img className="hero-image" src={image} alt={name} />
           {/* <div className="text-container"> */}
           <div className="card card-title">{name}</div>
+          <img className="stamp" src={stamp} alt="stamp" />
           <div className="card card-publisher">{biography.publisher}</div>
           <div className="card card-description">
             {`This character name is ${biography['full-name']} born in ${biography['place-of-birth']}

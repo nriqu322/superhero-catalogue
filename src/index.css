@@ -6,6 +6,10 @@
   max-width: 100%;
 }
 
+.superhero-form {
+  align-self: center;
+}
+
 .superhero-list {
   display: flex;
   flex-wrap: wrap;
@@ -36,7 +40,7 @@
   color: rgb(43, 63, 165);
 }
 
-.card-container img {
+.hero-image {
   width: 280px;
   height: 350px;
   border-radius: 5px;
@@ -45,7 +49,7 @@
 .card-title {
   position: absolute;
   top: 10px;
-  width: 200px;
+  width: 220px;
   font-size: 22px;
   font-weight: bold;
   left: 50%;
@@ -79,4 +83,13 @@
   color: rgb(17, 16, 16);
   font-weight: bold;
   border-radius: 10px;
+}
+
+.stamp {
+  position: absolute;
+  left: 4px;
+  bottom: 5px;
+  opacity: 0.3;
+  height: 50px;
+  z-index: 10;
 }
