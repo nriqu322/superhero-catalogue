@@ -62,7 +62,7 @@ class SuperheroList extends React.Component {
             id={superhero.id}
             name={superhero.name}
             image={superhero.image.url}
-            // superhero={superhero}
+            superhero={superhero}
           />
         ))
         }

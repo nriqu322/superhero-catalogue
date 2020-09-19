@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import setCurrentHero from '../actions/index';
 
 const SuperheroCard = props => {
   const {
@@ -12,24 +14,29 @@ const SuperheroCard = props => {
   };
 
   return (
-    <Link to={`/details/${id}`} onClick={handleClick}>
+    <Link to={`/details/${id}`} onClick={handleClick}> {/* new onClick*/}
       <div className="hero-element">
         <div className="card-container" id={id}>
           <img src={image} alt={name} />
           <h1>{name}</h1>
-          <p>{superhero}</p>
         </div>
       </div>
     </Link>
   );
 };
 
+const mapDispatchToProps = dispatch => ({
+  setCurrentHero: superhero => {
+    dispatch(setCurrentHero(superhero));
+  },
+}); // new
+
 SuperheroCard.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   superhero: PropTypes.objectOf(PropTypes.any).isRequired,
-  setCurrentHero: PropTypes.func.isRequired,
+  setCurrentHero: PropTypes.func.isRequired, // new
 };
 
-export default SuperheroCard;
+export default connect(null, mapDispatchToProps)(SuperheroCard);
