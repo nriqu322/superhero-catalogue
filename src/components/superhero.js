@@ -14,11 +14,12 @@ const SuperheroCard = props => {
   };
 
   return (
-    <Link to={`/details/${id}`} onClick={handleClick}> {/* new onClick*/}
+    <Link to={`/details/${id}`} onClick={handleClick}>
       <div className="hero-element">
         <div className="card-container" id={id}>
           <img src={image} alt={name} />
           <h1>{name}</h1>
+          {/* <button type="button" onClick={handleClick}>ClickMe</button> */}
         </div>
       </div>
     </Link>
@@ -32,7 +33,7 @@ const mapDispatchToProps = dispatch => ({
 }); // new
 
 SuperheroCard.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   superhero: PropTypes.objectOf(PropTypes.any).isRequired,

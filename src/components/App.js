@@ -11,9 +11,7 @@ const App = () => (
         <SearchForm />
         <SuperheroList />
       </Route>
-      <Route path="details/:id">
-        <SuperheroDetails />
-      </Route>
+      <Route path="/details/:id" component={SuperheroDetails} />
     </Switch>
   </Router>
 );

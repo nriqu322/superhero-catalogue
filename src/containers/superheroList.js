@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getSuperhero } from '../services/superheroApi';
@@ -56,10 +56,10 @@ class SuperheroList extends React.Component {
     return (
       <div className="superhero-list">
         {
-        superheroes.map(superhero => (
+        superheroes.map((superhero, index) => (
           <SuperheroCard
             key={superhero.id}
-            id={superhero.id}
+            id={index}
             name={superhero.name}
             image={superhero.image.url}
             superhero={superhero}

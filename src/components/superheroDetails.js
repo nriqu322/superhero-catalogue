@@ -1,49 +1,44 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import { getSuperheroId } from '../services/superheroApi';
-// import { filterSuperhero } from '../actions';
 
 const SuperheroDetails = props => {
-  const { superheroes, match } = props;
+  const { match } = props;
   const { id } = match.params;
+  const { superheroes } = props;
   const currentHero = superheroes[id];
 
-  // useEffect(() => {
-  //   getSuperheroId(id).then(response => {
-  //     if (response) {
-  //       filterSuperhero([response]);
-  //       console.log(response);
-  //     }
-  //   });
-  // });
-  console.log(currentHero.appearance);
+  console.log(currentHero);
+
   return (
     <div className="superhero-details">
+      <h1>Hello Details Page</h1>
+      <img src={currentHero.image.url} alt="hero" />
+      <br />
       { currentHero.name }
+      <br />
+      { currentHero.appearance.gender }
+      <br />
+      { currentHero.powerstats.power }
     </div>
   );
 };
 
 // class SuperheroDetails extends React.Component {
 //   componentDidMount() {
-//     const { filterSuperhero, match } = this.props;
-//     const { id } = match.params;
-
-//     getSuperheroId(id).then(response => {
-//       if (response) {
-//         filterSuperhero(response);
-//         console.log(response);
-//       }
-//     });
+//     const { superheroes } = this.props;
+//     const { id } = this.props.match.params;
+//     const currentHero = superheroes[id];
 //   }
+
+//   console.log(currentHero);
 
 //   render() {
 //     const { superheroes } = this.props;
 
 //     return (
 //       <div className="superhero-details">
-//         { superheroes.name }
+//         { superheroes[id].name }
 //       </div>
 //     );
 //   }
@@ -56,17 +51,12 @@ SuperheroDetails.propTypes = {
       id: PropTypes.string.isRequired,
     }),
   }).isRequired,
+  // match: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 const mapStateToProps = state => ({
-  superheroes: state.superheroes,
-  currentHero: state.currentHero,
+  superheroes: state.superheroes.superheroes,
+  currentHero: state.superheroes.currentHero,
 });
 
-// const mapDispatchToProps = dispatch => ({
-//   filterSuperhero: superheroes => {
-//     dispatch(filterSuperhero(superheroes));
-//   },
-// });
-
-export default connect(mapStateToProps)(SuperheroDetails);
+export default connect(mapStateToProps, null)(SuperheroDetails);
