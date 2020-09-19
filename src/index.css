@@ -6,8 +6,29 @@
   max-width: 100%;
 }
 
-.superhero-form {
-  align-self: center;
+#root {
+  background: url('../resources/body-background.jpg');
+}
+
+#superhero-form {
+  text-align: center;
+  margin: 25px 0 15px 0;
+}
+
+#superhero-form input {
+  height: 33px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 15px;
+}
+
+#superhero-form button {
+  margin-left: 15px;
+  height: 33px;
+  background-color: lightblue;
+  border: none;
+  border-radius: 5px;
 }
 
 .superhero-list {
@@ -18,7 +39,7 @@
 
 .hero-element {
   position: relative;
-  margin: 15px 0;
+  margin: 15px 5px;
 }
 
 .card {
