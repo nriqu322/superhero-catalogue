@@ -12,12 +12,71 @@
   justify-content: space-around;
 }
 
+.hero-element {
+  position: relative;
+  margin: 15px 0;
+}
+
+.card {
+  text-decoration: none;
+}
+
+.card-link {
+  text-decoration: none;
+}
+
 .card-container {
+  position: relative;
   text-align: center;
-  margin: 25px 20px;
+  padding: 20px 16px;
+  height: 420px;
+  border: 1px solid rgb(26, 25, 25);
+  border-radius: 7px;
+  background-color: rgb(41, 37, 37);
+  color: rgb(43, 63, 165);
 }
 
 .card-container img {
   width: 280px;
-  max-height: 340px;
+  height: 350px;
+  border-radius: 5px;
+}
+
+.card-title {
+  position: absolute;
+  top: 10px;
+  width: 200px;
+  font-size: 22px;
+  font-weight: bold;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding: 2px 10px;
+  background-color: rgb(255, 255, 255, 0.85);
+  border-radius: 20px;
+}
+
+.card-publisher {
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 7px;
+  border-radius: 8px 8px 0 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+}
+
+.card-description {
+  position: absolute;
+  bottom: 15px;
+  width: 280px;
+  height: 65px;
+  padding: 5px;
+  background: rgb(145, 94, 58);
+  color: rgb(17, 16, 16);
+  font-weight: bold;
+  border-radius: 10px;
 }

@@ -13,13 +13,21 @@ const SuperheroCard = props => {
     setCurrentHero(superhero);
   };
 
+  const { biography } = superhero;
+
   return (
-    <Link to={`/details/${id}`} onClick={handleClick}>
+    <Link className="card-link" to={`/details/${id}`} onClick={handleClick}>
       <div className="hero-element">
         <div className="card-container" id={id}>
           <img src={image} alt={name} />
-          <h1>{name}</h1>
-          {/* <button type="button" onClick={handleClick}>ClickMe</button> */}
+          {/* <div className="text-container"> */}
+          <div className="card card-title">{name}</div>
+          <div className="card card-publisher">{biography.publisher}</div>
+          <div className="card card-description">
+            {`This character name is ${biography['full-name']} born in ${biography['place-of-birth']}
+            `}
+          </div>
+          {/* </div> */}
         </div>
       </div>
     </Link>
