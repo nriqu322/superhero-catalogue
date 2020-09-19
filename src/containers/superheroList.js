@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import getSuperhero from '../services/superheroApi';
+import { getSuperhero } from '../services/superheroApi';
 import { filterSuperhero } from '../actions';
 import SuperheroCard from '../components/superhero';
 
@@ -62,6 +62,7 @@ class SuperheroList extends React.Component {
             id={superhero.id}
             name={superhero.name}
             image={superhero.image.url}
+            // superhero={superhero}
           />
         ))
         }
