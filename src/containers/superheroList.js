@@ -76,8 +76,12 @@ SuperheroList.propTypes = {
   superheroes: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
+// SuperheroList.defaultProps = {
+//   superheroes: [],
+// };
+
 const mapStateToProps = state => ({
-  superheroes: state.superheroes,
+  superheroes: state.superheroes.superheroes,
 });
 
 const mapDispatchToProps = dispatch => ({
