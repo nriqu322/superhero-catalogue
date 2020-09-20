@@ -2,13 +2,41 @@
 
 This project is a requirement of the Microverse curriculum. Capstone projects are solo projects at the end of the each of the Microverse Main Technical Curriculum sections.
 
-This project is based on a catalogue of recipes. But in this case is a catalogue of superheros, that is, a browsable list of items that you can filter and access to the details of one item.
+In this project I use the [superheroApi](https://superheroapi.com/) to retrieve information about superheroes and villains from different universes. The Main page displays a list of heroes depending on the search term and then you can click on any card to see the details of the character like powerstats, appearance, work, biography and connections. I use the React library to display the information required and Redux to manage the state of the app.
+
+If you feel curious you can check the [project requirements](https://www.notion.so/Catalogue-of-Recipes-ea589778a95f47fa98034d99d4016d2b).
 
 ## Live Version
 
 * [See live version here](https://nriqu3-superhero-catalogue.herokuapp.com/)
 
-![bookstore](src/assets/screenshot.png)
+### Main Page
+<img src="src/resources/screenshot.png" width=1000 />
+
+### Details Page
+<img src="src/resources/screenshot-details.png" width=1000 />
+
+## How to Run locally
+
+#### Clone this repository
+
+``` $ git clone https://github.com/nriqu322/superhero-catalogue.git ```
+
+#### Go to the folder
+
+``` $ cd superhero-catalogue ```
+
+#### Install all dependencies
+
+``` $ npm install ```
+
+#### Run the server
+
+``` $ npm start ```
+
+#### Open your browser and type
+
+localhost:3000
 
 ## Build with
 * [Create React App](https://github.com/facebook/create-react-app)
@@ -18,7 +46,6 @@ This project is based on a catalogue of recipes. But in this case is a catalogue
 * JavaScript
 * Heroku
 * ESlint and Stylelint as linters
-* Font Awesome icons
 
 ## Available Scripts
 
