@@ -41,6 +41,7 @@ const SuperheroDetails = props => {
         </div>
       </div>
       <hr />
+
       <div className="container-appearance">
         <h2>Appearance</h2>
         <div className="hero-appearance">
@@ -60,26 +61,40 @@ const SuperheroDetails = props => {
       </div>
       <div>
         <h2>Power Stats</h2>
-        <div>
+        <div className="hero-power">
           <h4>Combat</h4>
-          {currentHero.powerstats.combat}
+          <p>{currentHero.powerstats.combat}</p>
           <h4>Durability</h4>
-          {currentHero.powerstats.durability}
+          <p>{currentHero.powerstats.durability}</p>
           <h4>Intelligence</h4>
-          {currentHero.powerstats.intelligence}
+          <p>{currentHero.powerstats.intelligence}</p>
           <h4>Power</h4>
-          {currentHero.powerstats.power}
+          <p>{currentHero.powerstats.power}</p>
           <h4>Speed</h4>
-          {currentHero.powerstats.speed}
+          <p>{currentHero.powerstats.speed}</p>
           <h4>Strength</h4>
-          {currentHero.powerstats.strength}
+          <p>{currentHero.powerstats.strength}</p>
         </div>
       </div>
 
-      <br />
-      { currentHero.connections['group-affiliation']}
-      <br />
-      { currentHero.work.base }
+      <div className="container-connections">
+        <h2>Connections</h2>
+        <div className="hero-connections">
+          <h4>Group Affiliation</h4>
+          <p>{currentHero.connections['group-affiliation']}</p>
+          <h4>Relatives</h4>
+          <p>{currentHero.connections.relatives}</p>
+        </div>
+      </div>
+      <div className="container-work">
+        <h2>Work</h2>
+        <div className="hero-work">
+          <h4>Base</h4>
+          <p>{currentHero.work.base}</p>
+          <h4>Occupation</h4>
+          <p>{currentHero.work.occupation}</p>
+        </div>
+      </div>
     </div>
   );
 };

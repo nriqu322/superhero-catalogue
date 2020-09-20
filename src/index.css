@@ -167,11 +167,19 @@ header p {
   display: flex;
 }
 
-.h4 {
+.hero-bio-text h4,
+.hero-appearance h4,
+.hero-power h4,
+.hero-connections h4,
+.hero-work h4 {
   margin: 0;
 }
 
-.hero-bio-text p {
+.hero-bio-text p,
+.hero-appearance p,
+.hero-power p,
+.hero-connections p,
+.hero-work p {
   margin-top: 2px;
 }
 
