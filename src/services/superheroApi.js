@@ -16,16 +16,4 @@ async function getSuperhero(name) {
   }
 }
 
-// async function getSuperheroId(id) {
-//   try {
-//     const response = await fetch(`${api.baseUrl}${api.token}/${id}`);
-//     const data = await response.json();
-//     return data.results;
-//   } catch (e) {
-//     return {
-//       error: e.message,
-//     };
-//   }
-// }
-
 export default getSuperhero;
