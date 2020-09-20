@@ -41,12 +41,45 @@ const SuperheroDetails = props => {
         </div>
       </div>
       <hr />
+      <div className="container-appearance">
+        <h2>Appearance</h2>
+        <div className="hero-appearance">
+          <h4>Gender</h4>
+          <p>{currentHero.appearance.gender}</p>
+          <h4>Eye Color</h4>
+          <p>{currentHero.appearance['eye-color']}</p>
+          <h4>Hair Color</h4>
+          <p>{currentHero.appearance['hair-color']}</p>
+          <h4>Race</h4>
+          <p>{currentHero.appearance.race}</p>
+          <h4>Height</h4>
+          <p>{`${currentHero.appearance.height[0]} / ${currentHero.appearance.height[1]}`}</p>
+          <h4>Weight</h4>
+          <p>{`${currentHero.appearance.weight[0]} / ${currentHero.appearance.weight[1]}`}</p>
+        </div>
+      </div>
+      <div>
+        <h2>Power Stats</h2>
+        <div>
+          <h4>Combat</h4>
+          {currentHero.powerstats.combat}
+          <h4>Durability</h4>
+          {currentHero.powerstats.durability}
+          <h4>Intelligence</h4>
+          {currentHero.powerstats.intelligence}
+          <h4>Power</h4>
+          {currentHero.powerstats.power}
+          <h4>Speed</h4>
+          {currentHero.powerstats.speed}
+          <h4>Strength</h4>
+          {currentHero.powerstats.strength}
+        </div>
+      </div>
+
       <br />
-      { currentHero.name }
+      { currentHero.connections['group-affiliation']}
       <br />
-      { currentHero.appearance.gender }
-      <br />
-      { currentHero.powerstats.power }
+      { currentHero.work.base }
     </div>
   );
 };
