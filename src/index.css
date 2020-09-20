@@ -34,9 +34,11 @@ header p {
 }
 
 .header-container {
+
   display: flex;
   width: 100%;
-  background: url(./resources//head-background.jpg) no-repeat center fixed;
+  background: url(./resources//head-background.jpg) no-repeat;
+  background-position-y: center ;
   background-size: cover;
   height: 150px;
   color: rgb(235, 228, 228);
