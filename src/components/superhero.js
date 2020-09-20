@@ -21,7 +21,6 @@ const SuperheroCard = props => {
       <div className="hero-element">
         <div className="card-container" id={id}>
           <img className="hero-image" src={image} alt={name} />
-          {/* <div className="text-container"> */}
           <div className="card card-title">{name}</div>
           <img className="stamp" src={stamp} alt="stamp" />
           <div className="card card-publisher">{biography.publisher}</div>
@@ -29,7 +28,6 @@ const SuperheroCard = props => {
             {`This character name is ${biography['full-name']} born in ${biography['place-of-birth']}
             `}
           </div>
-          {/* </div> */}
         </div>
       </div>
     </Link>
@@ -40,14 +38,14 @@ const mapDispatchToProps = dispatch => ({
   setCurrentHero: superhero => {
     dispatch(setCurrentHero(superhero));
   },
-}); // new
+});
 
 SuperheroCard.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   superhero: PropTypes.objectOf(PropTypes.any).isRequired,
-  setCurrentHero: PropTypes.func.isRequired, // new
+  setCurrentHero: PropTypes.func.isRequired,
 };
 
 export default connect(null, mapDispatchToProps)(SuperheroCard);
