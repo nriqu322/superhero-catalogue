@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SearchForm from '../containers/searchForm';
 import SuperheroList from '../containers/superheroList';
 import SuperheroDetails from './superheroDetails';
+import Header from './header';
 
 const App = () => (
   <Router>
+    <Header />
     <Switch>
       <Route exact path="/">
         <SearchForm />
@@ -15,16 +17,5 @@ const App = () => (
     </Switch>
   </Router>
 );
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <div className="body-container">
-//         <SearchForm />
-//         <SuperheroList />
-//       </div>
-//     </div>
-//   );
-// }
 
 export default App;

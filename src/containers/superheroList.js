@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getSuperhero } from '../services/superheroApi';
+import getSuperhero from '../services/superheroApi';
 import { filterSuperhero } from '../actions';
 import SuperheroCard from '../components/superhero';
 

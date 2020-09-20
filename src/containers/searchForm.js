@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { filterSuperhero } from '../actions';
-import { getSuperhero } from '../services/superheroApi';
+import getSuperhero from '../services/superheroApi';
 
 // const SuperheroForm = props => {
 //   const [superhero, setSuperhero] = useState('');
@@ -73,7 +73,7 @@ class SuperheroForm extends React.Component {
     return (
       <form id="superhero-form" onSubmit={this.handleSubmit}>
         <input name="name" value={name} type="text" placeholder="Superhero name" onChange={this.handleChange} />
-        <button type="submit">SEARCH</button>
+        <button type="submit">S</button>
       </form>
     );
   }

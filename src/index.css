@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ceviche+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+/* font-family: 'Ceviche One', cursive; */
+/* font-family: 'Bangers', cursive; */
+/* font-family: 'Varela Round', sans-serif; */
+
 * {
   box-sizing: border-box;
 }
@@ -6,29 +14,64 @@
   max-width: 100%;
 }
 
-#root {
-  background: url('../resources/body-background.jpg');
+body {
+  background: url(./resources/body-background.jpeg) no-repeat center fixed;
+  background-size: cover;
+  height: 100%;
+  
+}
+
+header {
+  width: 100%;
+}
+
+header h1 {
+  font-size: 38px;
+}
+
+header p {
+  font-size: 22px;
+}
+
+.header-container {
+  display: flex;
+  width: 100%;
+  background: url(./resources//head-background.jpg) no-repeat center fixed;
+  background-size: cover;
+  height: 150px;
+  color: rgb(235, 228, 228);
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 0.3em;
 }
 
 #superhero-form {
   text-align: center;
-  margin: 25px 0 15px 0;
+  margin: 30px 0 20px 0;
 }
 
 #superhero-form input {
-  height: 33px;
-  border: 1px solid gray;
-  border-radius: 5px;
-  padding: 5px;
+  height: 35px;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
   font-size: 15px;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
 }
 
 #superhero-form button {
   margin-left: 15px;
-  height: 33px;
-  background-color: lightblue;
+  height: 35px;
+  width: 35px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  outline: none;
   border: none;
-  border-radius: 5px;
+  border-radius: 50%;
 }
 
 .superhero-list {
@@ -54,7 +97,8 @@
   position: relative;
   text-align: center;
   padding: 20px 16px;
-  height: 420px;
+  height: 430px;
+  width: 314px;
   border: 1px solid rgb(26, 25, 25);
   border-radius: 7px;
   background-color: rgb(41, 37, 37);
@@ -63,16 +107,17 @@
 
 .hero-image {
   width: 280px;
-  height: 350px;
+  height: 370px;
   border-radius: 5px;
 }
 
 .card-title {
   position: absolute;
   top: 10px;
-  width: 220px;
-  font-size: 22px;
-  font-weight: bold;
+  width: 230px;
+  font-size: 28px;
+  /* font-weight: bold; */
+  font-family: 'Ceviche One', cursive;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -83,12 +128,13 @@
 
 .card-publisher {
   position: absolute;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
+  font-family: 'Varela round', sans-serif;
   padding: 7px;
   border-radius: 8px 8px 0 0;
   background-color: rgba(0, 0, 0, 0.85);
-  bottom: 80px;
+  bottom: 85px;
   left: 50%;
   transform: translateX(-50%);
   color: white;
@@ -98,12 +144,13 @@
   position: absolute;
   bottom: 15px;
   width: 280px;
-  height: 65px;
+  height: 70px;
   padding: 5px;
+  font-family: 'Varela round', sans-serif;
   background: rgb(145, 94, 58);
   color: rgb(17, 16, 16);
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 0 0 5px 5px;
 }
 
 .stamp {
