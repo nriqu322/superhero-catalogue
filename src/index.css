@@ -174,13 +174,17 @@ header p {
 
 .hero-bio {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+}
+
+.hero-bio-text {
+  text-align: center;
 }
 
 .hero-bio img {
   width: 250px;
   height: 350px;
-  margin-right: 30px;
+  margin: 0 30px;
 }
 
 .hero-bio-text h4,

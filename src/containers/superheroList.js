@@ -20,7 +20,6 @@ class SuperheroList extends React.Component {
 
   render() {
     const { superheroes } = this.props;
-    console.log(superheroes);
     return (
       <div className="superhero-list">
         {

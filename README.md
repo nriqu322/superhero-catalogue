@@ -11,10 +11,11 @@ This project is based on a catalogue of recipes. But in this case is a catalogue
 ![bookstore](src/assets/screenshot.png)
 
 ## Build with
-* JavaScript
 * [Create React App](https://github.com/facebook/create-react-app)
 * React
 * Redux
+* React Router
+* JavaScript
 * Heroku
 * ESlint and Stylelint as linters
 * Font Awesome icons
