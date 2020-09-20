@@ -9,8 +9,6 @@ const SuperheroDetails = props => {
   const { superheroes } = props;
   const currentHero = superheroes[id];
 
-  console.log(currentHero);
-
   return (
     <div className="superhero-details">
       <div className="container-back">
