@@ -29,11 +29,10 @@ header p {
 }
 
 .header-container {
-
   display: flex;
   width: 100%;
   background: url(./resources//head-background.jpg) no-repeat;
-  background-position-y: center ;
+  background-position-y: center;
   background-size: cover;
   height: 150px;
   color: rgb(235, 228, 228);
@@ -233,7 +232,6 @@ header p {
 .container-connections,
 .container-work {
   background-color: rgba(10, 19, 48, 0.85);
-  height: 420px;
   width: 330px;
   height: 450px;
   text-align: center;
