@@ -24,34 +24,14 @@ const SuperheroDetails = props => {
   );
 };
 
-// class SuperheroDetails extends React.Component {
-//   componentDidMount() {
-//     const { superheroes } = this.props;
-//     const { id } = this.props.match.params;
-//     const currentHero = superheroes[id];
-//   }
-
-//   console.log(currentHero);
-
-//   render() {
-//     const { superheroes } = this.props;
-
-//     return (
-//       <div className="superhero-details">
-//         { superheroes[id].name }
-//       </div>
-//     );
-//   }
-// }
-
 SuperheroDetails.propTypes = {
   superheroes: PropTypes.arrayOf(PropTypes.object).isRequired,
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    }),
-  }).isRequired,
-  // match: PropTypes.objectOf(PropTypes.any).isRequired,
+  // match: PropTypes.shape({
+  //   params: PropTypes.shape({
+  //     id: PropTypes.string.isRequired,
+  //   }),
+  // }).isRequired,
+  match: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 const mapStateToProps = state => ({

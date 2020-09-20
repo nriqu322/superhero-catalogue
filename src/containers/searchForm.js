@@ -4,39 +4,6 @@ import PropTypes from 'prop-types';
 import { filterSuperhero } from '../actions';
 import getSuperhero from '../services/superheroApi';
 
-// const SuperheroForm = props => {
-//   const [superhero, setSuperhero] = useState('');
-//   const { filterSuperhero } = props;
-
-//   const handleSubmit = event => {
-//     event.preventDefault();
-//     // const { filterSuperhero } = props;
-
-//     if (superhero.name !== '') {
-//       getSuperhero(superhero.name).then(response => {
-//         if (response) {
-//           filterSuperhero(response);
-//           console.log(response);
-//         }
-//       });
-//     }
-//     console.log(superhero.name);
-//     // setSuperhero({ name: '' });
-//   };
-
-//   const handleChange = event => {
-//     event.preventDefault();
-//     setSuperhero({ [event.target.name]: event.target.value });
-//   };
-
-//   return (
-//     <form id="superhero-form" onSubmit={handleSubmit}>
-//       <input name="name" type="text" placeholder="Superhero name" onChange={handleChange} />
-//       <button type="submit">SEARCH</button>
-//     </form>
-//   );
-// };
-
 class SuperheroForm extends React.Component {
   constructor(props) {
     super(props);
@@ -64,7 +31,6 @@ class SuperheroForm extends React.Component {
       }
     });
     this.setState({ name: '' });
-    console.log(name);
   }
 
   render() {

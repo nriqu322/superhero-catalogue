@@ -5,38 +5,6 @@ import getSuperhero from '../services/superheroApi';
 import { filterSuperhero } from '../actions';
 import SuperheroCard from '../components/superhero';
 
-// const SuperheroList = props => {
-//   const { filterSuperhero } = props;
-//   const [superheroes, setSuperheroes] = useState([]);
-
-//   useEffect(() => {
-//     if (superheroes.length === 0) {
-//       getSuperhero('spider').then(response => {
-//         filterSuperhero(response);
-//         setSuperheroes(response);
-//         console.log(response);
-//       });
-//     }
-//   });
-
-//   return (
-//     <>
-//       <div className="superhero-list">
-//         {
-//           superheroes.map(superhero => (
-//             <SuperheroCard
-//               key={superhero.id}
-//               id={superhero.id}
-//               name={superhero.name}
-//               image={superhero.image.url}
-//             />
-//           ))
-//         }
-//       </div>
-//     </>
-//   );
-// };
-
 class SuperheroList extends React.Component {
   componentDidMount() {
     const { filterSuperhero, superheroes } = this.props;
@@ -75,10 +43,6 @@ SuperheroList.propTypes = {
   filterSuperhero: PropTypes.func.isRequired,
   superheroes: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
-
-// SuperheroList.defaultProps = {
-//   superheroes: [],
-// };
 
 const mapStateToProps = state => ({
   superheroes: state.superheroes.superheroes,
