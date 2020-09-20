@@ -8,7 +8,7 @@ If you feel curious you can check the [project requirements](https://www.notion.
 
 ## Live Version
 
-* [See live version here](https://nriqu3-superhero-catalogue.herokuapp.com/)
+* [See live version here](https://nriqu322-superhero-catalogue.netlify.app/)
 
 ### Main Page
 <img src="src/resources/screenshot.png" width=1000 />
@@ -44,7 +44,7 @@ localhost:3000
 * Redux
 * React Router
 * JavaScript
-* Heroku
+* Netlify
 * ESlint and Stylelint as linters
 
 ## Available Scripts
