@@ -162,3 +162,24 @@ header p {
   height: 50px;
   z-index: 10;
 }
+
+.hero-bio {
+  display: flex;
+}
+
+.hero-bio-text h4 {
+  margin: 0;
+}
+
+.hero-bio-text p {
+  margin-top: 2px;
+}
+
+.separator {
+  margin: 0 10px;
+}
+
+.hero-bio img {
+  width: 250px;
+  height: 350px;
+}
