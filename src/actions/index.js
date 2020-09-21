@@ -1,5 +1,6 @@
 const FILTER_SUPERHEROES = 'FILTER_SUPERHEROES';
 const SET_CURRENT_HERO = 'CURRENT_HERO';
+const FILTER_PUBLISHER = 'FILTER_PUBLISHER';
 
 const filterSuperhero = superheroes => ({
   type: FILTER_SUPERHEROES,
@@ -11,6 +12,13 @@ const setCurrentHero = superhero => ({
   payload: superhero,
 });
 
+// new filter
+const filterPublisher = publisher => ({
+  type: FILTER_PUBLISHER,
+  payload: publisher,
+});
+
 export {
-  FILTER_SUPERHEROES, SET_CURRENT_HERO, filterSuperhero, setCurrentHero,
+  FILTER_SUPERHEROES, SET_CURRENT_HERO, FILTER_PUBLISHER,
+  filterSuperhero, setCurrentHero, filterPublisher,
 };

@@ -4,8 +4,14 @@ import PropTypes from 'prop-types';
 import getSuperhero from '../services/superheroApi';
 import { filterSuperhero } from '../actions';
 import SuperheroCard from '../components/superhero';
+import PublisherFilter from '../components/publisherFilter';
 
 class SuperheroList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handlePublisherFilter = this.handlePublisherFilter.bind(this);
+  }
+
   componentDidMount() {
     const { filterSuperhero, superheroes } = this.props;
 
@@ -18,22 +24,35 @@ class SuperheroList extends React.Component {
     }
   }
 
+  handlePublisherFilter(e) {
+    this.filterSuperhero(e.target.value);
+  }
+
   render() {
     const { superheroes } = this.props;
+    const publishers = ['Marvel Comics', 'DC Comics'];
+    // const filterSuperheroes = superheroes.filter(superhero => superhero.biography.publisher === superheroes )
+
     return (
-      <div className="superhero-list">
-        {
-        superheroes.map((superhero, index) => (
-          <SuperheroCard
-            key={superhero.id}
-            id={index}
-            name={superhero.name}
-            image={superhero.image.url}
-            superhero={superhero}
-          />
-        ))
-        }
-      </div>
+      <>
+        <div className="publisher-container">
+          <div>Publisher Filter:</div>
+          <PublisherFilter publisherList={publishers} />
+        </div>
+        <div className="superhero-list">
+          {
+          superheroes.map((superhero, index) => (
+            <SuperheroCard
+              key={superhero.id}
+              id={index}
+              name={superhero.name}
+              image={superhero.image.url}
+              superhero={superhero}
+            />
+          ))
+          }
+        </div>
+      </>
     );
   }
 }

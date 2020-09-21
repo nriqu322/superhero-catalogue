@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { filterSuperhero } from '../actions';
 
 const PublisherFilter = props => {
-  const { publisherList, changeFilter } = props;
+  const { publisherList } = props;
 
   const handlePublisherFilter = filter => {
-    changeFilter(filter);
+    filterSuperhero(filter);
   };
 
   return (
@@ -18,7 +19,7 @@ const PublisherFilter = props => {
 };
 
 PublisherFilter.propTypes = {
-  changeFilter: PropTypes.func.isRequired,
+  // changeFilter: PropTypes.func.isRequired,
   publisherList: PropTypes.instanceOf(Array).isRequired,
 };
 
