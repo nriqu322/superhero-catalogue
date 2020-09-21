@@ -110,7 +110,6 @@ SuperheroDetails.propTypes = {
       id: PropTypes.string.isRequired,
     }),
   }).isRequired,
-  // match: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 const mapStateToProps = state => ({
