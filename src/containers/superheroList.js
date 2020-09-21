@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import getSuperhero from '../services/superheroApi';
-import { filterSuperhero } from '../actions';
+import { filterPublisher, filterSuperhero } from '../actions';
 import SuperheroCard from '../components/superhero';
 import PublisherFilter from '../components/publisherFilter';
 
@@ -24,14 +24,15 @@ class SuperheroList extends React.Component {
     }
   }
 
-  handlePublisherFilter(e) {
-    this.filterSuperhero(e.target.value);
-  }
+  handleFilterPublisher(e) {
+    const { filterPublisher } = this.props;
+    filterPublisher(e.target.value);
+  };
 
   render() {
     const { superheroes } = this.props;
     const publishers = ['Marvel Comics', 'DC Comics'];
-    // const filterSuperheroes = superheroes.filter(superhero => superhero.biography.publisher === superheroes )
+    const filterPublisher = superheroes.filter(superhero => superhero.biography.publisher === superheroes )
 
     return (
       <>
@@ -60,6 +61,7 @@ class SuperheroList extends React.Component {
 SuperheroList.propTypes = {
   filterSuperhero: PropTypes.func.isRequired,
   superheroes: PropTypes.arrayOf(PropTypes.object).isRequired,
+  filterPublisher: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -69,6 +71,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   filterSuperhero: superheroes => {
     dispatch(filterSuperhero(superheroes));
+  },
+  filterPublisher: publisher => {
+    dispatch(filterPublisher(publisher));
   },
 });
 
