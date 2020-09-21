@@ -7,6 +7,10 @@ import './index.css';
 import App from './components/App';
 import rootReducer from './reducers/index';
 
+// const initialState = {
+//   publisher: 'All',
+// };
+
 const store = createStore(rootReducer, composeWithDevTools());
 
 ReactDOM.render(

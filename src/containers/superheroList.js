@@ -9,7 +9,7 @@ import PublisherFilter from '../components/publisherFilter';
 class SuperheroList extends React.Component {
   constructor(props) {
     super(props);
-    this.handlePublisherFilter = this.handlePublisherFilter.bind(this);
+    this.handleFilterPublisher = this.handleFilterPublisher.bind(this);
   }
 
   componentDidMount() {
@@ -27,30 +27,35 @@ class SuperheroList extends React.Component {
   handleFilterPublisher(e) {
     const { filterPublisher } = this.props;
     filterPublisher(e.target.value);
-  };
+  }
 
   render() {
-    const { superheroes } = this.props;
-    const publishers = ['Marvel Comics', 'DC Comics'];
-    const filterPublisher = superheroes.filter(superhero => superhero.biography.publisher === superheroes )
+    const { superheroes, publisher } = this.props;
+    const publishers = ['All', 'Marvel Comics', 'DC Comics'];
+    const filterByPublisher = superheroes.filter(superhero => superhero.biography.publisher === publisher || publisher === 'All');
 
     return (
       <>
         <div className="publisher-container">
           <div>Publisher Filter:</div>
-          <PublisherFilter publisherList={publishers} />
+          <PublisherFilter
+            publisherList={publishers}
+            filterPublisher={this.handleFilterPublisher}
+          />
         </div>
         <div className="superhero-list">
           {
-          superheroes.map((superhero, index) => (
-            <SuperheroCard
-              key={superhero.id}
-              id={index}
-              name={superhero.name}
-              image={superhero.image.url}
-              superhero={superhero}
-            />
-          ))
+          filterByPublisher
+            // .filter()
+            .map((superhero, index) => (
+              <SuperheroCard
+                key={superhero.id}
+                id={index}
+                name={superhero.name}
+                image={superhero.image.url}
+                superhero={superhero}
+              />
+            ))
           }
         </div>
       </>
@@ -62,10 +67,12 @@ SuperheroList.propTypes = {
   filterSuperhero: PropTypes.func.isRequired,
   superheroes: PropTypes.arrayOf(PropTypes.object).isRequired,
   filterPublisher: PropTypes.func.isRequired,
+  publisher: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
   superheroes: state.superheroes.superheroes,
+  publisher: state.publisher,
 });
 
 const mapDispatchToProps = dispatch => ({

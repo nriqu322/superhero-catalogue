@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import superheroReducer from './superheroes';
-import filterReducer from './filter';
+import filterReducer from './publisher';
 
 const rootReducer = combineReducers({
   superheroes: superheroReducer,

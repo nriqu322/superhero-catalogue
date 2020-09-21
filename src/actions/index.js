@@ -12,10 +12,9 @@ const setCurrentHero = superhero => ({
   payload: superhero,
 });
 
-// new filter
 const filterPublisher = publisher => ({
   type: FILTER_PUBLISHER,
-  payload: publisher,
+  publisher,
 });
 
 export {
