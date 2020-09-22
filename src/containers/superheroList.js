@@ -31,7 +31,9 @@ class SuperheroList extends React.Component {
 
   render() {
     const { superheroes, publisher } = this.props;
-    const publishers = ['All', 'Marvel Comics', 'DC Comics'];
+    const publishers = [];
+    superheroes.map(superhero => (!publishers.includes(superhero.biography.publisher))
+      && publishers.push(superhero.biography.publisher));
     const filterByPublisher = superheroes.filter(superhero => superhero.biography.publisher === publisher || publisher === 'All');
 
     return (
@@ -46,7 +48,6 @@ class SuperheroList extends React.Component {
         <div className="superhero-list">
           {
           filterByPublisher
-            // .filter()
             .map((superhero, index) => (
               <SuperheroCard
                 key={superhero.id}
