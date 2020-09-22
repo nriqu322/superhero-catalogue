@@ -70,6 +70,29 @@ header p {
   border-radius: 50%;
 }
 
+.publisher-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.publisher-container div {
+  font-family: 'Varela round', sans-serif;
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+.publisher-container select {
+  border-radius: 5px;
+  background-color: #57575f;
+  color: rgb(219, 210, 210);
+  width: 150px;
+  height: 30px;
+  border: none;
+  padding: 0 5px;
+}
+
 .superhero-list {
   display: flex;
   flex-wrap: wrap;
