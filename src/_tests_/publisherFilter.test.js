@@ -1,13 +1,19 @@
-import React from 'react';
-import { render, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+/* global React, shallow, sinon, render, mount */
 import PublisherFilter from '../components/publisherFilter';
 
-afterEach(cleanup);
-
 it('publisher renders ok', () => {
-  const { asFragment } = render(<PublisherFilter publisherList={['Marvel Comics', 'DC Comics']} filterPublisher={() => {}} />);
-  expect(asFragment()).toMatchSnapshot();
+  const wrapper = render(<PublisherFilter publisherList={['Marvel Comics', 'DC Comics']} filterPublisher={() => {}} />);
+  expect(wrapper).toMatchSnapshot();
 });
 
-// it();
+it('publisher representation ok', () => {
+  const wrapper = shallow(<PublisherFilter publisherList={['Marvel Comics', 'DC Comics']} filterPublisher={() => {}} />);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('select filter should trigger an action', () => {
+  const spy = sinon.spy();
+  const wrapper = mount(<PublisherFilter publisherList={['Marvel Comics', 'DC Comics']} filterPublisher={spy} />);
+  wrapper.find('select').simulate('change');
+  expect(spy.calledOnce).toBe(true);
+});

@@ -1,6 +1,5 @@
-// import React from 'react';
-// import { shallow } from 'enzyme';
-/* global React, shallow */
+import React from 'react';
+import { shallow } from 'enzyme';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import App from '../components/App';
 import Header from '../components/header';
