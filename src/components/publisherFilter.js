@@ -11,10 +11,8 @@ const PublisherFilter = props => {
   return (
     <select name="publisher" className="publisher-filter" onChange={handlePublisherFilter}>
       <option key="All">All</option>
-      {publisherList.map(publisher => (
-        <>
-          <option key={publisher}>{publisher}</option>
-        </>
+      {publisherList.map((publisher, index) => (
+        <option key={publisher[index]}>{publisher}</option>
       ))}
     </select>
   );

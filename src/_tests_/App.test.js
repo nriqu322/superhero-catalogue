@@ -1,10 +1,11 @@
-import React, { createElement } from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React from 'react';
+import { render, cleanup } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import App from '../components/App';
-import Header from '../components/header';
+
+afterEach(cleanup);
 
 it('renders app', () => {
-  // const div = document.createElement('div');
-  // ReactDOM.render(<App />, div);
+  const { asFragment } = render(<App />);
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`publisher renders ok 1`] = `
+<DocumentFragment>
+  <select
+    class="publisher-filter"
+    name="publisher"
+  >
+    <option>
+      All
+    </option>
+    <option>
+      Marvel Comics
+    </option>
+    <option>
+      DC Comics
+    </option>
+  </select>
+</DocumentFragment>
+`;
