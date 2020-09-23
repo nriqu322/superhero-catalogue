@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders app 1`] = `
+<BrowserRouter>
+  <Header />
+  <Switch>
+    <Route
+      exact={true}
+      path="/"
+    >
+      <Connect(SuperheroForm) />
+      <Connect(SuperheroList) />
+    </Route>
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(SuperheroDetails)",
+          "type": [Function],
+        }
+      }
+      path="/details/:id"
+    />
+  </Switch>
+</BrowserRouter>
+`;

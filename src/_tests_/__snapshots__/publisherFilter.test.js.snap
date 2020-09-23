@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`publisher renders ok 1`] = `
+<select
+  class="publisher-filter"
+  name="publisher"
+>
+  <option>
+    All
+  </option>
+  <option>
+    Marvel Comics
+  </option>
+  <option>
+    DC Comics
+  </option>
+</select>
+`;
+
+exports[`publisher representation ok 1`] = `
+<select
+  className="publisher-filter"
+  name="publisher"
+  onChange={[Function]}
+>
+  <option
+    key="All"
+  >
+    All
+  </option>
+  <option
+    key="M"
+  >
+    Marvel Comics
+  </option>
+  <option
+    key="C"
+  >
+    DC Comics
+  </option>
+</select>
+`;

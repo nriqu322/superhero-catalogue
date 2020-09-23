@@ -1,3 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ceviche+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 * {
   box-sizing: border-box;
+}
+
+.App {
+  max-width: 100%;
+}
+
+body {
+  background: url(./resources/body-background.jpeg) no-repeat center fixed;
+  background-size: cover;
+  height: 100%;
+}
+
+header {
+  width: 100%;
+}
+
+header h1 {
+  font-size: 38px;
+}
+
+header p {
+  font-size: 22px;
+}
+
+.header-container {
+  display: flex;
+  width: 100%;
+  background: url(./resources//head-background.jpg) no-repeat;
+  background-position-y: center;
+  background-size: cover;
+  height: 150px;
+  color: rgb(235, 228, 228);
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 0.3em;
+}
+
+#superhero-form {
+  text-align: center;
+  margin: 30px 0 20px 0;
+}
+
+#superhero-form input {
+  height: 35px;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  font-size: 15px;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+#superhero-form button {
+  margin-left: 15px;
+  height: 35px;
+  width: 35px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+}
+
+.publisher-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.publisher-container div {
+  font-family: 'Varela round', sans-serif;
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+.publisher-container select {
+  border-radius: 5px;
+  background-color: #57575f;
+  color: rgb(219, 210, 210);
+  width: 150px;
+  height: 30px;
+  border: none;
+  padding: 0 5px;
+}
+
+.superhero-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 25px;
+}
+
+.hero-element {
+  position: relative;
+  margin: 15px 5px;
+}
+
+.card {
+  text-decoration: none;
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.card-container {
+  position: relative;
+  text-align: center;
+  padding: 20px 16px;
+  height: 430px;
+  width: 314px;
+  border: 1px solid rgb(26, 25, 25);
+  border-radius: 7px;
+  background-color: rgb(41, 37, 37);
+  color: rgb(43, 63, 165);
+}
+
+.hero-image {
+  width: 280px;
+  height: 370px;
+  border-radius: 5px;
+}
+
+.card-title {
+  position: absolute;
+  top: 10px;
+  width: 230px;
+  font-size: 28px;
+  font-family: 'Ceviche One', cursive;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding: 2px 10px;
+  background-color: rgb(255, 255, 255, 0.85);
+  border-radius: 20px;
+}
+
+.card-publisher {
+  position: absolute;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: 'Varela round', sans-serif;
+  padding: 7px;
+  border-radius: 8px 8px 0 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  bottom: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+}
+
+.card-description {
+  position: absolute;
+  bottom: 15px;
+  width: 280px;
+  height: 70px;
+  padding: 5px;
+  font-family: 'Varela round', sans-serif;
+  background: rgb(145, 94, 58);
+  color: rgb(17, 16, 16);
+  font-weight: bold;
+  border-radius: 0 0 5px 5px;
+}
+
+.stamp {
+  position: absolute;
+  left: 4px;
+  bottom: 5px;
+  opacity: 0.3;
+  height: 50px;
+  z-index: 10;
+}
+
+.container-back {
+  display: flex;
+  justify-content: center;
+}
+
+.back {
+  color: black;
+}
+
+.hero-bio {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hero-bio-text {
+  text-align: center;
+}
+
+.hero-bio img {
+  width: 250px;
+  height: 350px;
+  margin: 0 30px;
+}
+
+.hero-bio-text h4,
+.hero-appearance h4,
+.hero-power h4,
+.hero-connections h4,
+.hero-work h4 {
+  margin: 0;
+  font-family: 'Varela round', sans-serif;
+}
+
+.hero-bio-text p,
+.hero-appearance p,
+.hero-power p,
+.hero-connections p,
+.hero-work p {
+  margin-top: 2px;
+  font-family: 'Varela round', sans-serif;
+}
+
+.separator {
+  margin: 0 10px;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 25px;
+}
+
+.stats-title {
+  font-family: 'Ceviche One', cursive;
+  font-size: 30px;
+  font-weight: normal;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.container-bio {
+  background-color: rgba(141, 139, 32, 0.85);
+  border-radius: 10px;
+  margin: 15px 30px;
+  padding: 5px 20px;
+  min-width: 700px;
+}
+
+.container-appearance,
+.container-power,
+.container-connections,
+.container-work {
+  background-color: rgba(10, 19, 48, 0.85);
+  width: 330px;
+  height: 450px;
+  text-align: center;
+  margin: 15px 20px;
+  padding: 0 15px;
+  border-radius: 10px;
+  color: white;
 }
