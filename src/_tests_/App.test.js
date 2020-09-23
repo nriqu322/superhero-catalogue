@@ -1,11 +1,26 @@
-import React from 'react';
-import { render, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+// import React from 'react';
+// import { shallow } from 'enzyme';
+/* global React, shallow */
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import App from '../components/App';
-
-afterEach(cleanup);
+import Header from '../components/header';
 
 it('renders app', () => {
-  const { asFragment } = render(<App />);
-  expect(asFragment()).toMatchSnapshot();
+  const wrapper = shallow(<App />);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('contains a Router', () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper.find(Router)).not.toBe(undefined);
+});
+
+it('contains Routes', () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper.find(Route).length).toBe(2);
+});
+
+it('display header component', () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper.find(Header)).not.toBe(undefined);
 });

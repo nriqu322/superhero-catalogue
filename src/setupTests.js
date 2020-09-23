@@ -3,7 +3,7 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 // eslint-disable-next-line import/no-extraneous-dependencies
-import '@testing-library/jest-dom/extend-expect';
+// import '@testing-library/jest-dom/extend-expect';
 
 import React from 'react';
 import Enzyme, { shallow, render, mount } from 'enzyme';
